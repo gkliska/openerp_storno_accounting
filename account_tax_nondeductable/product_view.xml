@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<openerp>
+ <data>
+
+<!-- PRODUCT CATEGORY Account maping-->
+    <record model="ir.ui.view" id="view_product_category_account_map_tree">
+        <field name="name">product.category.account.map.tree</field>
+        <field name="model">product.category.account.map</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Product Category Account Mapping" editable="bottom">
+                <field name="account_source_id" />
+                <field name="account_dest_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_product_category_account_map_form">
+        <field name="name">product.category.account.map.form</field>
+        <field name="model">product.category.account.map</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Product Category Account Mapping">
+                <field name="account_source_id" />
+                <field name="account_dest_id" />
+            </form>
+        </field>
+    </record>
+
+
+<!-- PRODUCT Account mapping-->
+    <record model="ir.ui.view" id="view_product_account_map_tree">
+        <field name="name">product.account.map.tree</field>
+        <field name="model">product.account.map</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Product Account Mapping" editable="bottom">
+                <field name="account_source_id" />
+                <field name="account_dest_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_product_account_map_form">
+        <field name="name">product.account.map.form</field>
+        <field name="model">product.account.map</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Product Account Mapping">
+                <field name="account_source_id" />
+                <field name="account_dest_id" />
+            </form>
+        </field>
+    </record>
+
+
+
+
+<!-- PRODUCT CATEGORY -->
+        <record id="view_category_property_form_nondeductable" model="ir.ui.view">
+            <field name="name">product.category.property.form.inherit.nondeductable</field>
+            <field name="model">product.category</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_category_property_form"/>
+            <field name="arch" type="xml">
+				<field name="type" position="after">
+	                <field name="code" colspan="2"/>
+				</field>
+               <form position="inside">
+                      <newline/>
+                      
+                    <group col="4" colspan="4">
+                        <separator string="Additional accounts" colspan="4"/>
+                        <field name="property_account_expense2_categ" domain="[('type','!=','view'),('type','!=','consolidation')]"/>
+                        <field name="property_account_income2_categ" domain="[('type','!=','view'),('type','!=','consolidation')]"/>
+                    </group>
+<!--
+                    <group col="4" colspan="4">
+                        <separator string="Accounts maps" colspan="4"/>
+                       <field name="account_map_ids" colspan="2" nolabel="1"/>
+                    </group>
+-->
+                </form>
+                
+            </field>     
+        </record>
+
+
+<!-- PRODUCT -->
+        <record id="product_category_tree_nondeductable" model="ir.ui.view">
+            <field name="name">product.category.tree.inherit.nondeductable</field>
+            <field name="model">product.category</field>
+            <field name="type">tree</field>
+            <field name="field_parent">child_id</field>
+            <field name="inherit_id" ref="product.product_category_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+	                <field name="code" />
+                </field>
+            </field>
+        </record>
+
+        <record id="product_normal_form_view_nondeductable" model="ir.ui.view">
+            <field name="name">product.normal.form.inherit.nondeductable</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.product_normal_form_view"/>
+            <field name="arch" type="xml">
+               <field name="property_account_expense" position="after" >
+                    <group col="4" colspan="4">
+                        <!--separator string="Additional accounts" colspan="4"/-->
+                        <field name="property_account_income2" domain="[('type','&lt;&gt;','view'),('type','&lt;&gt;','consolidation')]"/>
+                        <field name="property_account_expense2" domain="[('type','&lt;&gt;','view'),('type','&lt;&gt;','consolidation')]"/>
+                    </group>
+               </field>
+               <field name="supplier_taxes_id" position="after" >
+                      <newline/>
+                      <group col="4" colspan="4">
+                          <separator string="Accounts maps" colspan="4"/>
+                         <field name="account_map_ids" nolabel="1" colspan="2"/>
+                      </group>
+               </field>
+            </field>     
+        </record>
+
+ </data>
+</openerp>

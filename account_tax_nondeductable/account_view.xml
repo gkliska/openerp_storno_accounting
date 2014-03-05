@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+ <data>
+<!-- account.tax -->
+        <record id="view_tax_form_nondeductable" model="ir.ui.view">
+            <field name="name">account.tax.form.inherit.nondeductable</field>
+            <field name="model">account.tax</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="arch" type="xml">
+                        <page string="Tax Definition" position="replace">
+                        <page string="Tax Definition" >
+                          <group colspan="4" col="4">
+                                  <field name="type"/>
+                                  <field name="amount" attrs="{'readonly':[('type','in',('none', 'code', 'balance'))]}"/>
+                                  <separator colspan="4" string="Accounting Information"/>
+                                  <field name="account_collected_id" domain="[('type','&lt;&gt;','consolidation')]"/>     <!--('type','&lt;&gt;','view')-->
+                                  <field name="account_paid_id"      domain="[('type','&lt;&gt;','consolidation')]"/>     <!--('type','&lt;&gt;','view')-->
+                                  <separator colspan="4" string="Accounting Information for base"/>
+                                  <field name="base_account"/>
+                                  <field name="base_account_collected_id" domain="[('type','&lt;&gt;','consolidation')]"/>     <!--('type','&lt;&gt;','view')-->
+                                  <field name="base_account_paid_id"      domain="[('type','&lt;&gt;','consolidation')]"/>     <!--('type','&lt;&gt;','view')-->
+                                  <separator colspan="4" string="Tax Declaration: Invoices"/>
+                                  <field name="base_code_id"/>
+                                  <field name="base_sign"/>
+                                  <field name="tax_code_id"/>
+                                  <field name="tax_sign"/>
+                                  <separator colspan="4" string="Tax Declaration: Credit Notes"/>
+                                  <field name="ref_base_code_id"/>
+                                  <field name="ref_base_sign"/>
+                                  <field name="ref_tax_code_id"/>
+                                  <field name="ref_tax_sign"/>
+                                  <separator groups="base.group_extended" colspan="4" string="Children Definition"/>
+                                  <field groups="base.group_extended" name="child_depend"/>
+                                  <field groups="base.group_extended" name="sequence"/>
+                                  <field groups="base.group_extended" name="include_base_amount"/>
+                                  <field groups="base.group_extended" colspan="4" name="child_ids"/>
+                          </group>
+                        </page>
+                        </page>
+            </field>
+        </record>
+        
+        <record id="view_invoice_line_form_nondeductable" model="ir.ui.view">
+            <field name="name">account.invoice.line.form.nondeductable</field>
+            <field name="model">account.invoice.line</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_invoice_line_form"/>
+            <field name="arch" type="xml">
+                <field name="account_analytic_id" position="after" >
+                     <field name="account2_id" on_change="onchange_account2_id(product_id, parent.partner_id, parent.inv_type,parent.fiscal_position,, account_id, account2_id)" domain="[('company_id', '=', parent.company_id), ('journal_id', '=', parent.journal_id), ('type', '&lt;&gt;', 'view')]" />                     <!-- field name="account2_id" on_change="onchange_account2_id(parent.fiscal_position,account_id,account2_id)" domain="[('company_id', '=', parent.company_id), ('journal_id', '=', parent.journal_id), ('type', '&lt;&gt;', 'view')]" / -->
+                </field>
+            </field>
+        </record>
+	
+ </data>
+</openerp>

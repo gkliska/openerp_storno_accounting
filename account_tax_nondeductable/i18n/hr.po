@@ -1,0 +1,210 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_tax_nondeductable
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1beta\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-04 12:18+0000\n"
+"PO-Revision-Date: 2012-01-04 12:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_tax_nondeductable
+#: field:product.template,account_map_ids:0
+msgid "Account Mapping"
+msgstr "Account Mapping"
+
+#. module: account_tax_nondeductable
+#: view:account.tax:0
+msgid "Tax Declaration: Invoices"
+msgstr "Tax Declaration: Invoices"
+
+#. module: account_tax_nondeductable
+#: field:product.category,account_expense2_categ_id:0
+#: field:product.template,account_expense2_id:0
+msgid "Expense Account 2"
+msgstr "Expense Account 2"
+
+#. module: account_tax_nondeductable
+#: constraint:product.template:0
+msgid "Error: The default UOM and the purchase UOM must be in the same category."
+msgstr "Error: The default UOM and the purchase UOM must be in the same category."
+
+#. module: account_tax_nondeductable
+#: help:product.category,account_expense2_categ_id:0
+msgid "Alternative account for product can be used to value part of tax base expenses for this product category"
+msgstr "Alternative account for product can be used to value part of tax base expenses for this product category"
+
+#. module: account_tax_nondeductable
+#: help:product.category,account_income2_categ_id:0
+msgid "Alternative account for product can be used to value part of nondeductable tax base sales for this product category"
+msgstr "Alternative account for product can be used to value part of nondeductable tax base sales for this product category"
+
+#. module: account_tax_nondeductable
+#: view:account.tax:0
+msgid "Accounting Information"
+msgstr "Accounting Information"
+
+#. module: account_tax_nondeductable
+#: view:account.tax:0
+msgid "Accounting Information for base"
+msgstr "Accounting Information for base"
+
+#. module: account_tax_nondeductable
+#: help:account.tax,base_account:0
+msgid "Base Account source for this tax. /Product/ will use account from product/invoice line,\n"
+" /Product 2/ will force usage of alternative account from product/product category,\n"
+" /Tax definition/ will use Base Accounts from tax definition."
+msgstr "Base Account source for this tax. /Product/ will use account from product/invoice line,\n"
+" /Product 2/ will force usage of alternative account from product/product category,\n"
+" /Tax definition/ will use Base Accounts from tax definition."
+
+#. module: account_tax_nondeductable
+#: selection:account.tax,base_account:0
+#: field:product.account.map,product_id:0
+msgid "Product"
+msgstr "Product"
+
+#. module: account_tax_nondeductable
+#: model:ir.model,name:account_tax_nondeductable.model_product_category
+msgid "Product Category"
+msgstr "Product Category"
+
+#. module: account_tax_nondeductable
+#: field:account.tax,base_account_collected_id:0
+msgid "Invoice Base Account"
+msgstr "Invoice Base Account"
+
+#. module: account_tax_nondeductable
+#: view:product.product:0
+msgid "Accounts maps"
+msgstr "Accounts maps"
+
+#. module: account_tax_nondeductable
+#: view:account.tax:0
+msgid "Tax Declaration: Credit Notes"
+msgstr "Tax Declaration: Credit Notes"
+
+#. module: account_tax_nondeductable
+#: field:account.tax,base_account:0
+msgid "Base Account source."
+msgstr "Base Account source."
+
+#. module: account_tax_nondeductable
+#: field:product.category,account_income2_categ_id:0
+#: field:product.template,account_income2_id:0
+msgid "Income Account 2"
+msgstr "Income Account 2"
+
+#. module: account_tax_nondeductable
+#: view:account.tax:0
+msgid "Children Definition"
+msgstr "Children Definition"
+
+#. module: account_tax_nondeductable
+#: sql_constraint:account.tax:0
+msgid "Tax Name must be unique per company!"
+msgstr "Tax Name must be unique per company!"
+
+#. module: account_tax_nondeductable
+#: help:product.template,account_income2_id:0
+msgid "This account will be used for invoices to value part of nondeductable tax base sales for the current product category"
+msgstr "This account will be used for invoices to value part of nondeductable tax base sales for the current product category"
+
+#. module: account_tax_nondeductable
+#: view:product.category.account.map:0
+msgid "Product Category Account Mapping"
+msgstr "Product Category Account Mapping"
+
+#. module: account_tax_nondeductable
+#: field:product.account.map,account_dest_id:0
+msgid "Account Destination"
+msgstr "Account Destination"
+
+#. module: account_tax_nondeductable
+#: help:account.invoice.line,account2_id:0
+msgid "Second account related to the selected product."
+msgstr "Second account related to the selected product."
+
+#. module: account_tax_nondeductable
+#: view:account.tax:0
+msgid "Tax Definition"
+msgstr "Tax Definition"
+
+#. module: account_tax_nondeductable
+#: model:ir.model,name:account_tax_nondeductable.model_product_template
+msgid "Product Template"
+msgstr "Product Template"
+
+#. module: account_tax_nondeductable
+#: field:account.tax,base_account_paid_id:0
+msgid "Refund Base Account"
+msgstr "Refund Base Account"
+
+#. module: account_tax_nondeductable
+#: selection:account.tax,base_account:0
+msgid "Product 2"
+msgstr "Product 2"
+
+#. module: account_tax_nondeductable
+#: model:ir.model,name:account_tax_nondeductable.model_product_account_map
+#: view:product.account.map:0
+msgid "Product Account Mapping"
+msgstr "Product Account Mapping"
+
+#. module: account_tax_nondeductable
+#: model:ir.model,name:account_tax_nondeductable.model_account_invoice_tax
+msgid "Invoice Tax"
+msgstr "Invoice Tax"
+
+#. module: account_tax_nondeductable
+#: view:product.category:0
+msgid "Additional accounts"
+msgstr "Additional accounts"
+
+#. module: account_tax_nondeductable
+#: field:product.category,code:0
+msgid "Code"
+msgstr "Code"
+
+#. module: account_tax_nondeductable
+#: constraint:product.category:0
+msgid "Error ! You cannot create recursive categories."
+msgstr "Error ! You cannot create recursive categories."
+
+#. module: account_tax_nondeductable
+#: model:ir.model,name:account_tax_nondeductable.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Invoice Line"
+
+#. module: account_tax_nondeductable
+#: selection:account.tax,base_account:0
+msgid "Tax definition"
+msgstr "Tax definition"
+
+#. module: account_tax_nondeductable
+#: help:product.template,account_expense2_id:0
+msgid "This account will be used for invoices to value part of nondeductable tax base expenses for the current product category"
+msgstr "This account will be used for invoices to value part of nondeductable tax base expenses for the current product category"
+
+#. module: account_tax_nondeductable
+#: field:account.invoice.line,account2_id:0
+msgid "Account 2"
+msgstr "Account 2"
+
+#. module: account_tax_nondeductable
+#: model:ir.model,name:account_tax_nondeductable.model_account_tax
+msgid "account.tax"
+msgstr "account.tax"
+
+#. module: account_tax_nondeductable
+#: field:product.account.map,account_source_id:0
+msgid "Account Source"
+msgstr "Account Source"
+

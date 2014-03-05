@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+ <data>
+	
+ <!-- Tax code -->
+	
+    <record id="view_tax_code_tax_payment" model="ir.ui.view">
+        <field name="name">view.tax.code.tax_payment</field>
+        <field name="model">account.tax.code</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account.view_tax_code_form"/>
+        <field name="arch" type="xml">
+        	<field name="company_id" position="after">
+        	    <newline/>
+        		<group colspan="6" col="4">       	
+        			<separator string="Tax payment management" colspan="4"/>
+        			<field name="posting_policy"/>
+        			<field name="payment_tax_code_id"/>
+        			<field name="payment_account_id"/>
+        		</group>
+        	</field>
+        </field>
+    </record>        
+	
+	<record id="view_account_journal_tax_payment" model="ir.ui.view">
+		<field name="name">view.account.journal.tax.payment</field>
+		<field name="model">account.journal</field>
+		<field name="type">form</field>
+		<field name="inherit_id" ref="account.view_account_journal_form"/>
+		<field name="arch" type="xml">
+			<notebook position="inside">
+				<page string="Postavke poreza">
+					<group colspan="6" col="4"> 
+						<field name="tax_payment_journal_id" groups="account.group_account_manager"/>
+						<!--field name="tax_payment_position_id" groups="account.group_account_manager"/-->
+					</group>	
+				</page>
+			</notebook>
+		</field>
+	</record>	
+	
+ </data>
+</openerp>
